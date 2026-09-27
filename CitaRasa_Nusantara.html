@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cita Rasa - Khas Nusantara</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Favicon (type diperbaiki) -->
+    <link rel="icon" type="image/png" href="images/FullLogo.png" />
+    <!-- CSS project -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="images/logonav.png" alt="Logo Cita Rasa" />
+      </div>
+      <!-- HAMBURGER BUTTON WAJIB -->
+      <button class="hamburger" id="hamburger-btn">☰</button>
+
+      <nav id="nav-menu">
+        <!-- Dropdown Khas Nusantara -->
+        <div class="nav-item dropdown">
+          <button
+            class="dropdown-toggle"
+            id="dd-khas"
+            aria-expanded="false"
+            aria-haspopup="true"
+            type="button"
+          >
+            Khas Nusantara
+            <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+          </button>
+
+          <ul class="dropdown-menu" aria-labelledby="dd-khas">
+            <li><a href="sumatera-bila.html">Sumatera</a></li>
+            <li><a href="sumatera-kheyla.html">Aceh, Lampung &amp; Riau</a></li>
+            <li><a href="kodingan dua ana.html">Kalimantan</a></li>
+            <li>
+              <a href="resep karedok,kerak telor,rawon kehyla.html">Jawa</a>
+            </li>
+            <li><a href="resep sulawesi nayla.html">Sulawesi</a></li>
+            <li>
+              <a href="resep rawon dll kheyla.html">Bali &amp; Nusa Tenggara</a>
+            </li>
+            <li>
+              <a href="resep maluku papua nayla.html">Maluku &amp; Papua</a>
+            </li>
+          </ul>
+        </div>
+
+        <a href="#Resep-Populer">Resep Populer</a>
+        <a href="Tentangkami.html">Tentang Kami</a>
+        <a href="#Kontak">Kontak</a>
+        <a href="login.html" class="login-btn">
+          <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Login
+        </a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <img src="images/FullLogo.png" alt="Logo Cita Rasa" class="hero-logo" />
+      <h2>Selamat Datang di Cita Rasa</h2>
+      <p>
+        Kumpulan resep Nusantara dengan cita rasa autentik dari Sabang sampai
+        Merauke
+      </p>
+
+      <div class="dots" aria-hidden="true">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <!-- Resep Populer -->
+    <section id="Resep-Populer">
+      <div class="container">
+        <h2>Resep Populer</h2>
+        <div class="recipes">
+          <a href="sumatera-bila.html" class="card">
+            <img src="images/rendang.jpg" alt="Rendang Padang" />
+            <h3>Rendang Padang</h3>
+            <p>
+              Resep masakan Minang yang mendunia, kaya rempah dan cita rasa.
+            </p>
+          </a>
+
+          <a href="sumatera-bila.html" class="card">
+            <img src="images/sate.jpg" alt="Sate Ayam Madura" />
+            <h3>Sate Ayam Madura</h3>
+            <p>Sate khas Madura dengan bumbu kacang gurih.</p>
+          </a>
+
+          <a href="sumatera-bila.html" class="card">
+            <img src="images/soto.webp" alt="Soto Lamongan" />
+            <h3>Soto Lamongan</h3>
+            <p>Kuah bening hangat dengan koya khas Lamongan.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Makanan Khas Nusantara (slider) -->
+    <section class="khas-nusantara">
+      <h2>Makanan Khas Nusantara</h2>
+      <p>
+        Temukan cita rasa autentik dari berbagai makanan khas provinsi Indonesia
+      </p>
+
+      <div class="slider-container">
+        <div class="slider-wrapper" tabindex="0">
+          <div class="slider-track">
+            <!-- SUMATERA -->
+
+            <a href="papua1-ririn.html" target="_blank" class="food-card">
+              <img src="images/Kasuami.jpg" alt="Kasuami - Papua Barat Daya" />
+              <h3>Kasuami - Papua Barat Daya</h3>
+              <p>
+                Kasuami Terbuat dari singkong parut yang dikukus dan dibentuk
+                kerucut.
+              </p>
+            </a>
+
+            <a href="papua1-ririn.html" target="_blank" class="food-card">
+              <img
+                src="images/jagung bose.jpeg"
+                alt="Jagung Bose (Nusa Tenggara Timur)"
+              />
+              <h3>Jagung Bose - Nusa Tenggara Timur</h3>
+              <p>
+                Jagung Bose terbuat dari jagung putih yang direbus bersama
+                kacang dan santan.
+              </p>
+            </a>
+
+            <a href="papua-ririn.html" target="_blank" class="food-card">
+              <img
+                src="images/ikan kuah kuning.jpeg"
+                alt="Ikan Kuah Kuning - papua selatan"
+              />
+              <h3>Ikan Kuah Kuning - papua selatan</h3>
+              <p>
+                Ikan Kuah Kuning menggunakan ikan laut segar seperti kakap atau
+                tongkol.
+              </p>
+            </a>
+
+            <a href="papua-ririn.html" target="_blank" class="food-card">
+              <img
+                src="images/udang selingkuh.jpeg"
+                alt="Udang Selingkuh - papua tengah"
+              />
+              <h3>Udang Selingkuh - papua tengah</h3>
+              <p>
+                Udang Selingkuh adalah udang air tawar besar di daerah
+                pegunungan Wamena.
+              </p>
+            </a>
+
+            <a href="papua-ririn.html" target="_blank" class="food-card">
+              <img
+                src="images/IKAN_BAKAR_MANOKWARI.jpg"
+                alt="Ikan Bakar Manokwari (papua barat)"
+              />
+              <h3>Ikan Bakar Manokwari - papua barat</h3>
+              <p>
+                Ikan dibakar di atas bara tanpa banyak bumbu & sambal rica
+                mentah.
+              </p>
+            </a>
+
+            <a href="sumatera-kheyla.html" target="_blank" class="food-card">
+              <img src="images/Mie-aceh.jpg" alt="Mie Aceh - Aceh" />
+              <h3>Mie Aceh - Aceh</h3>
+              <p>Mi pedas gurih khas Aceh dengan kari rempah.</p>
+            </a>
+
+            <a href="resep bila 1.html" target="_blank" class="food-card">
+              <img
+                src="images/Pempek Telur.jpg"
+                alt="Pempek - Sumatera Selatan"
+              />
+              <h3>Pempek - Sumatera Selatan</h3>
+              <p>Ikan dan sagu disajikan dengan cuko pedas khas Palembang.</p>
+            </a>
+
+            <a href="sumatera-bila.html" target="_blank" class="food-card">
+              <img src="images/rendang.jpg" alt="Rendang - Sumatera Barat" />
+              <h3>Rendang - Sumatera Barat</h3>
+              <p>Daging sapi dimasak lama dengan santan dan rempah.</p>
+            </a>
+
+            <a href="resep bila 2.html" target="_blank" class="food-card">
+              <img
+                src="images/Gulai Belacan Riau.jpg"
+                alt="Gulai Belacan - Riau"
+              />
+              <h3>Gulai Belacan - Riau</h3>
+              <p>Udang dengan kuah santan pedas khas Melayu.</p>
+            </a>
+
+            <a href="resep bila 1.html" target="_blank" class="food-card">
+              <img src="images/seruit.jpg" alt="Seruit - Lampung" />
+              <h3>Seruit - Lampung</h3>
+              <p>Ikan goreng atau bakar dengan sambal tempoyak.</p>
+            </a>
+
+            <a href="resep bila 1.html" target="_blank" class="food-card">
+              <img
+                src="images/Udang masak lemak nenas – Pineapple prawn curry.jpg"
+                alt="Lemak Nenas - Kepulauan Riau"
+              />
+              <h3>Lemak Nenas - Kepulauan Riau</h3>
+              <p>Udang dengan potongan nanas dalam santan gurih.</p>
+            </a>
+
+            <a href="sumatera-kheyla.html" target="_blank" class="food-card">
+              <img
+                src="images/gulai-ikan-patin.jpg"
+                alt="Gulai Ikan Patin - Jambi"
+              />
+              <h3>Gulai Ikan Patin - Jambi</h3>
+              <p>Ikan patin dimasak dengan kuah santan pedas gurih.</p>
+            </a>
+
+            <a href="resep bila 2.html" target="_blank" class="food-card">
+              <img
+                src="images/arsikikanmas.jpg"
+                alt="Arsik Ikan Mas - Sumatera Utara"
+              />
+              <h3>Arsik Ikan Mas - Sumatera Utara</h3>
+              <p>Ikan mas dimasak bumbu kuning khas Batak.</p>
+            </a>
+
+            <a href="resep bila 1.html" target="_blank" class="food-card">
+              <img src="images/pendap.png" alt="Pendap - Bengkulu" />
+              <h3>Pendap - Bengkulu</h3>
+              <p>Ikan bumbu rempah dibungkus daun talas dan dikukus.</p>
+            </a>
+
+            <!-- JAWA -->
+            <a
+              href="resep karedok,kerak telor,rawon kehyla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img
+                src="images/kerak_telor.jpg"
+                alt="Kerak Telor - DKI Jakarta"
+              />
+              <h3>Kerak Telor - DKI Jakarta</h3>
+              <p>Nasi ketan, telur, dan serundeng khas Betawi.</p>
+            </a>
+
+            <a
+              href="resep karedok,kerak telor,rawon kehyla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img src="images/karedok.jpeg" alt="Karedok - Jawa Barat" />
+              <h3>Karedok - Jawa Barat</h3>
+              <p>Sayuran mentah dengan bumbu kacang pedas segar.</p>
+            </a>
+
+            <a
+              href="resep karedok,kerak telor,rawon kehyla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img
+                src="images/resep_lumpia_semarang.jpg"
+                alt="Lumpia Semarang - Jawa Tengah"
+              />
+              <h3>Lumpia Semarang - Jawa Tengah</h3>
+              <p>Kulit tipis isi rebung dan udang khas Semarang.</p>
+            </a>
+
+            <a
+              href="resep karedok,kerak telor,rawon kehyla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img src="images/gudeg.jpg" alt="Gudeg - DI Yogyakarta" />
+              <h3>Gudeg - DI Yogyakarta</h3>
+              <p>Nangka muda manis dimasak dengan santan kental.</p>
+            </a>
+
+            <a
+              href="resep karedok,kerak telor,rawon kehyla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img src="images/rawon.jpg" alt="Rawon - Jawa Timur" />
+              <h3>Rawon - Jawa Timur</h3>
+              <p>Kuah hitam gurih dengan daging sapi khas Surabaya.</p>
+            </a>
+
+            <!-- BALI & NUSA TENGGARA -->
+            <a
+              href="resep rawon dll kheyla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img src="images/ayam_betutu.jpg" alt="Ayam Betutu - Bali" />
+              <h3>Ayam Betutu - Bali</h3>
+              <p>Ayam panggang rempah lengkap khas Bali.</p>
+            </a>
+
+            <a
+              href="resep rawon dll kheyla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img
+                src="images/sate bulayak.jpg"
+                alt="Sate Bulayak - Nusa Tenggara Barat"
+              />
+              <h3>Sate Bulayak - Nusa Tenggara Barat</h3>
+              <p>Sate sapi dengan lontong daun aren khas Lombok.</p>
+            </a>
+
+            <a
+              href="resep rawon dll kheyla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img
+                src="images/seu daging asap.jpg"
+                alt="Se'i Daging Asap - Nusa Tenggara Timur"
+              />
+              <h3>Se'i Daging Asap - Nusa Tenggara Timur</h3>
+              <p>Daging sapi diasap perlahan khas Kupang.</p>
+            </a>
+
+            <!-- KALIMANTAN -->
+            <a href="kodingan dua ana.html" target="_blank" class="food-card">
+              <img
+                src="images/pengkang.jpg"
+                alt="Pengkang - Kalimantan Barat"
+              />
+              <h3>Pengkang - Kalimantan Barat</h3>
+              <p>Nasi pulut isi udang dibungkus daun pisang.</p>
+            </a>
+
+            <a href="kodingan dua ana.html" target="_blank" class="food-card">
+              <img
+                src="images/juhu-singkah-uhut-foto-resep-utama.jpg"
+                alt="Juhu Singkah - Kalimantan Tengah"
+              />
+              <h3>Juhu Singkah - Kalimantan Tengah</h3>
+              <p>Sayur rotan muda khas suku Dayak.</p>
+            </a>
+
+            <a href="sumatera-bila.html" target="_blank" class="food-card">
+              <img
+                src="images/sotomedan.jpg"
+                alt="Soto Banjar - Kalimantan Selatan"
+              />
+              <h3>Soto Banjar - Kalimantan Selatan</h3>
+              <p>Kuah bening harum rempah, disajikan dengan ketupat.</p>
+            </a>
+
+            <a href="kodingan satu ana.html" target="_blank" class="food-card">
+              <img
+                src="images/sambal-raja-kutai-foto-resep-utama.jpg"
+                alt="Sambal Raja - Kalimantan Timur"
+              />
+              <h3>Sambal Raja - Kalimantan Timur</h3>
+              <p>Sambal terong dan petai khas Kutai.</p>
+            </a>
+
+            <a href="papua1-ririn.html" target="_blank" class="food-card">
+              <img
+                src="images/singgang.jpg"
+                alt="Singgang - Kalimantan Utara"
+              />
+              <h3>Singgang - Kalimantan Utara</h3>
+              <p>Ikan asam pedas khas pesisir Kalimantan.</p>
+            </a>
+
+            <!-- SULAWESI -->
+            <a href="kodingan satu ana.html" target="_blank" class="food-card">
+              <img src="images/jepa.jpg" alt="Jepa - Sulawesi Barat" />
+              <h3>Jepa - Sulawesi Barat</h3>
+              <p>Roti singkong tipis khas Mandar.</p>
+            </a>
+
+            <a href="kodingan satu ana.html" target="_blank" class="food-card">
+              <img
+                src="images/ikan parape.jpg"
+                alt="Ikan Parape - Sulawesi Tengah"
+              />
+              <h3>Ikan Parape - Sulawesi Tengah</h3>
+              <p>Ikan bakar dengan sambal khas Palu.</p>
+            </a>
+
+            <a href="kodingan dua ana.html" target="_blank" class="food-card">
+              <img
+                src="images/coto-makasar-bisa-jadi-ins-20230601124303.jpg"
+                alt="Coto Makassar - Sulawesi Selatan"
+              />
+              <h3>Coto Makassar - Sulawesi Selatan</h3>
+              <p>Sup kacang tanah dan daging khas Bugis.</p>
+            </a>
+
+            <a
+              href="resep sulawesi nayla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img
+                src="images/sinonggi.jpg"
+                alt="Sinonggi - Sulawesi Tenggara"
+              />
+              <h3>Sinonggi - Sulawesi Tenggara</h3>
+              <p>Olahan sagu disajikan dengan ikan kuah kuning.</p>
+            </a>
+
+            <a
+              href="resep sulawesi nayla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img src="images/tinutuan.jpg" alt="Tinutuan - Sulawesi Utara" />
+              <h3>Tinutuan - Sulawesi Utara</h3>
+              <p>Bubur sayur sehat khas Manado.</p>
+            </a>
+
+            <a
+              href="resep sulawesi nayla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img
+                src="images/Binte-Biluhuta-Bubur-Ja.width-800.format.webp"
+                alt="Binte Biluhuta - Gorontalo"
+              />
+              <h3>Binte Biluhuta - Gorontalo</h3>
+              <p>Sup jagung segar dengan ikan dan udang.</p>
+            </a>
+
+            <!-- MALUKU & PAPUA -->
+            <a
+              href="resep maluku papua nayla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img src="images/papeda.webp" alt="Papeda - Maluku" />
+              <h3>Papeda - Maluku</h3>
+              <p>Sagu disajikan dengan ikan kuah kuning.</p>
+            </a>
+
+            <a
+              href="resep maluku papua nayla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img src="images/gohu ikan.jpg" alt="Gohu Ikan - Maluku Utara" />
+              <h3>Gohu Ikan - Maluku Utara</h3>
+              <p>Ikan mentah segar dengan jeruk nipis dan cabai.</p>
+            </a>
+
+            <a
+              href="resep maluku papua nayla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img src="images/sagu lempeng.jpg" alt="Sagu Lempeng - Papua" />
+              <h3>Sagu Lempeng - Papua</h3>
+              <p>Olahan sagu panggang kaya serat dan rasa alami.</p>
+            </a>
+
+            <a
+              href="resep maluku papua nayla.html"
+              target="_blank"
+              class="food-card"
+            >
+              <img
+                src="images/pisang bakar.jpg"
+                alt="Pisang Bakar - Papua Pegunungan"
+              />
+              <h3>Pisang Bakar - Papua Pegunungan</h3>
+              <p>Pisang panggang disajikan dengan kelapa parut manis.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <section id="Kontak"></section>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="images/FullLogo.png" alt="Logo Cita Rasa" />
+          <p>
+            <strong>Cita Rasa - Nusantara</strong> menghadirkan rasa autentik
+            Nusantara dari Sabang sampai Merauke.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Navigasi</h3>
+          <ul>
+            <li><a href="#khas-nusantara">Khas Nusantara</a></li>
+            <li><a href="#Resep-Populer">Resep Populer</a></li>
+            <li><a href="Tentangkami.html">Tentang Kami</a></li>
+            <li><a href="#Kontak">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h3>Berlangganan</h3>
+          <p>
+            Dapatkan resep terbaru &amp; artikel kuliner langsung ke email Anda.
+          </p>
+          <form>
+            <input type="email" placeholder="Masukkan email Anda" required />
+            <button type="submit">Kirim</button>
+          </form>
+          <div class="footer-social" aria-hidden="true">
+            <a href="#"
+              ><i class="fa-brands fa-facebook" aria-hidden="true"></i
+            ></a>
+            <a href="#"
+              ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="#"
+              ><i class="fa-brands fa-youtube" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cita Rasa | Rasa Nusantara. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Script utama (file eksternal) -->
+    <script src="script.js"></script>
+
+    <!-- Floating Logo -->
+    <a href="login.html" class="floating-logo" aria-label="Login cepat">
+      <img src="images/floating.png" alt="Logo Cita Rasa - Floating" />
+    </a>
+  </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cita Rasa - Khas Nusantara</title>
+    <link rel="icon" type="images/FullLogo" href="images/FullLogo.png" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        background: #000; /* fallback, tidak akan terlihat nanti */
+      }
+
+      /* Background utama */
+      .background {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -3;
+        opacity: 1;
+        /* animasi hanya berjalan setelah dipicu JS */
+        animation: changeBackground 25s infinite ease-in-out;
+        animation-play-state: paused;
+      }
+
+      /* Overlay warna khas transparan */
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          rgba(253, 212, 131, 0.5),
+          rgba(255, 177, 7, 0.5),
+          rgba(222, 28, 6, 0.5)
+        );
+        backdrop-filter: blur(4px);
+        z-index: -2;
+      }
+
+      .login-card {
+        position: relative;
+        z-index: 2;
+        width: 380px;
+        padding: 40px 35px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        text-align: center;
+        color: #fff;
+        animation: fadeIn 1.2s ease-in-out;
+      }
+
+      .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .logo img {
+        width: 120px; /* ubah sesuai ukuran ideal logomu */
+        height: auto;
+        object-fit: contain; /* pastikan proporsinya tetap */
+        border-radius: 0; /* tidak bulat */
+        box-shadow: none; /* hapus bayangan putih jika tidak cocok */
+        animation: fadeInLogo 1s ease-in-out;
+      }
+
+      .login-card h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      .login-card p {
+        font-size: 14px;
+        margin-bottom: 25px;
+        opacity: 0.9;
+      }
+
+      .login-card input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        outline: none;
+        background: rgba(255, 255, 255, 0.8);
+        color: #000000;
+      }
+
+      .login-card button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        background: linear-gradient(#fdd483, #e39c02, #c0392b);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .login-card button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .quote {
+        margin-top: 20px;
+        font-size: 13px;
+        font-style: italic;
+        color: #ffe0b2;
+      }
+
+      /* Animasi fade login card */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Ganti gambar otomatis */
+      @keyframes changeBackground {
+        0% {
+          background-image: url("images/bila6.jpg");
+        }
+        25% {
+          background-image: url("images/bila1.jpg");
+        }
+        50% {
+          background-image: url("images/si_Artboard_8.jpg");
+        }
+        75% {
+          background-image: url("images/bila7.jpg");
+        }
+        100% {
+          background-image: url("images/bila8.jpg");
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="overlay"></div>
+
+    <div class="login-card">
+      <div class="logo">
+        <img src="images/FullLogo.png" alt="Logo Resep Nusantara" />
+      </div>
+      <h2>Resep Nusantara</h2>
+      <p>Masuk untuk menjelajahi cita rasa Indonesia 🇮🇩</p>
+      <form>
+        <input type="text" placeholder="Username" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <div class="quote">
+        “Rasa adalah bahasa universal yang menyatukan nusantara.” 🌿
+      </div>
+    </div>
+
+    <script>
+      const bg = document.querySelector(".background");
+      const images = [
+        "images/bila6.jpg",
+        "images/bila1.jpg",
+        "images/si_Artboard_8.jpg",
+        "images/bila7.jpg",
+        "images/bila8.jpg",
+      ];
+
+      // preload semua gambar agar tidak ada flash
+      const preloadImages = (srcArray, callback) => {
+        let loaded = 0;
+        srcArray.forEach((src) => {
+          const img = new Image();
+          img.onload = () => {
+            loaded++;
+            if (loaded === srcArray.length) callback();
+          };
+          img.src = src;
+        });
+      };
+
+      // tampilkan langsung gambar pertama
+      bg.style.backgroundImage = `url('${images[0]}')`;
+
+      // mulai animasi setelah semua gambar siap
+      preloadImages(images, () => {
+        bg.style.animationPlayState = "running";
+      });
+    </script>
+  </body>
+</html>

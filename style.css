@@ -1,0 +1,720 @@
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fffdf9;
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to right, #FFF4E6, #e39c0b, #c0392b, #c0392b);
+      padding: 10px 30px;
+      color: #c0392b;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    header .logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    header .logo h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+    html {
+  scroll-behavior: smooth;
+  }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+    /* Dropdown nav khas nusantara */
+nav { display:flex; gap:20px; align-items:center; }
+
+/* container dropdown */
+.nav-item.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* tombol pemicu - disesuaikan tampilan nav */
+.dropdown-toggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 6px 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+/* hide default focus outline -> tambahkan custom focus */
+.dropdown-toggle:focus {
+  outline: 3px solid rgba(255,215,0,0.25);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* menu */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  background: linear-gradient(180deg, #fffdf9 0%, #fff9e6 100%);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  padding: 8px 6px;
+  list-style: none;
+  margin: 0;
+  display: none; /* default hidden */
+  z-index: 2000;
+  transform-origin: top;
+}
+
+/* show class untuk JS */
+.dropdown-menu.show {
+  display: block;
+  animation: ddIn .18s ease;
+}
+
+/* item menu */
+.dropdown-menu li {
+  margin: 6px 0;
+}
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #c0392b;
+  font-weight: 600;
+  border-radius: 6px;
+}
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+  background: rgba(224,142,20,0.08);
+  color: #e39c0b;
+  outline: none;
+}
+
+/* small-screen: menu full-width dropdown under nav */
+@media (max-width:780px){
+  nav { gap:12px; }
+  .dropdown-menu {
+    left: 0;
+    right: auto;
+    min-width: 180px;
+  }
+}
+
+/* simple enter animation */
+@keyframes ddIn {
+  from { opacity: 0; transform: translateY(-6px) scale(.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
+    /* Tombol Login */
+    .login-btn {
+      background-color: #ffd700;
+      color: #c0392b;
+      padding: 8px 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: white;
+      color: #c0392b;
+    }
+
+    /* HERO */
+  .hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Layer background slideshow */
+.hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  transition: opacity 1s ease-in-out;
+}
+
+/* layer aktif */
+.hero-bg.show {
+  opacity: 1;
+}
+/* layer sembunyi */
+.hero-bg.hide {
+  opacity: 0;
+}
+
+/* Gradasi di atas background */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(178,34,34,0.6));
+  z-index: -1;
+}
+.hero-logo {
+  width: 200px;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+.hero h2, .hero p, .dots {
+  z-index: 1;
+  position: relative;
+}
+
+.dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.dots span.active {
+  opacity: 1;
+  background: #ffcc00;
+}
+
+    /* CONTENT */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .recipes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px;
+      font-size: 1.2rem;
+      color: #c0392b;
+    }
+
+    .card p {
+      margin: 0 15px 15px;
+      font-size: 0.9rem;
+    }
+    
+ /* =========================
+   Makanan Khas Nusantara (Compact Style)
+========================= */
+.khas-nusantara {
+  background-color:#fffdf9;
+  text-align: center;
+  padding: 50px 20px 5px; /* padding bawah diperbesar agar tidak dempet */
+}
+
+.khas-nusantara h2 {
+  color: #c0392b;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.khas-nusantara p {
+  color: #000000;
+  font-size: 1em;
+  margin-bottom: 35px;
+}
+
+/* Container utama slider */
+.slider-container {
+  position: relative;
+  max-width: 1150px;
+  margin: auto;
+  overflow: hidden;
+  margin-bottom: 40px; /* tambahkan jarak bawah antar elemen */
+}
+
+/* Wrapper dan track */
+.slider-wrapper {
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  gap: 18px;
+  transition: transform 0.5s ease;
+}
+
+
+/* --- Card lebih kecil dan padat --- */
+.food-card {
+  flex: 0 0 215px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+}
+
+/* --- Gambar proporsional --- */
+.food-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* --- Judul lebih ringkas --- */
+.food-card h3 {
+  color: #c0392b;
+  font-size: 1em;
+  margin: 10px 8px 5px;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+/* --- Deskripsi pendek --- */
+.food-card p {
+  color: #000000;
+  font-size: 0.85em;
+  margin: 0 8px 12px;
+  line-height: 1.3em;
+  height: 34px;
+  overflow: hidden;
+}
+
+/* Tombol slider */
+.slide-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background-color: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.slide-btn:hover {
+  opacity: 1;
+  background-color: #c0392b;
+}
+
+.slide-btn.prev { left: -12px; }
+.slide-btn.next { right: -12px; }
+.slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .food-card {
+    flex: 0 0 160px;
+  }
+  .food-card img {
+    height: 150px;
+  }
+  .food-card h3 {
+    font-size: 0.9em;
+  }
+  .food-card p {
+    font-size: 0.75em;
+  }
+}
+
+
+footer {
+  background: linear-gradient(#fffdf9,#e39c02, #c0392b);
+  color: #fff;
+  padding: 50px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+}
+
+.footer-logo img {
+  width: 100px;
+  margin-bottom: 15px;
+}
+.footer-logo h2 {
+  margin: 10px 0;
+  color: #c0392b; /* warna emas elegan */
+}
+.footer-logo p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #fff;
+  max-width: 250px;
+}
+
+.footer-links h3,
+.footer-newsletter h3 {
+  margin-bottom: 15px;
+  color: #c0392b;
+  font-size: 18px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-links ul li {
+  margin: 8px 0;
+}
+.footer-links ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+.footer-links ul li a:hover {
+  color: #fff;
+}
+
+.footer-newsletter p {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-newsletter form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.footer-newsletter input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+.footer-newsletter button {
+  background: #ffd700;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.footer-newsletter button:hover {
+  background: #e2b930;
+}
+
+.footer-social a {
+  font-size: 20px;
+  margin-right: 12px;
+  color: #fff;
+  transition: 0.3s;
+}
+.footer-social a:hover {
+  color: #f4c542;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  border-top: 1px solid #444;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #fff;
+}
+
+
+/* Tombol logo mengambang */
+/* pastikan container posisi relatif dan logo di atas */
+.floating-logo {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: visible;
+  z-index: 9999; /* logo paling atas */
+  display: inline-block;
+}
+
+.floating-logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+  /* pastikan konten depan jelas */
+  position: relative;
+  z-index: 10000;
+  box-shadow: 0 6px 14px rgba(255, 255, 255, 0);
+}
+
+/* --- Cahaya hanya dari pinggir (transparent center) --- */
+/* inti warm edge glow (lebih dekat ke pinggir) */
+.floating-logo::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  /* transparan di tengah sehingga wajah logo tidak tertutup.
+     'stop' pertama (60%) tetap transparan, warna mulai setelahnya */
+  background: radial-gradient(circle at center,
+              rgb(255, 0, 0) 62%,
+              rgb(234, 219, 4) 75%,
+              rgb(234, 169, 4) 75%,
+              rgb(234, 4, 4) 75%,
+              rgb(255, 77, 0) 88%);
+  filter: blur(14px);
+  opacity: 0.9;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 9997; /* di belakang logo */
+}
+
+/* aura lebih lebar namun tetap punya lubang tengah */
+.floating-logo::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at center,
+              rgb(255, 174, 0) 58%,
+              rgb(255, 238, 1) 75%,
+              rgb(234, 4, 4) 75%,
+              rgba(234, 169, 4, 0.434) 75%,
+              rgba(238, 255, 0, 0.295) 88%);
+  filter: blur(26px);
+  opacity: .6;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 9996; /* paling belakang */
+}
+
+/* non-scaling hover — hanya bayangan sedikit */
+.floating-logo:hover { box-shadow: 0 20px 48px rgba(255, 255, 255, 0); }
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .floating-logo::after,
+  .floating-logo::before { animation: none; filter: blur(12px); opacity: .7; }
+}
+
+/* small-screen tweak */
+@media (max-width:420px){
+  .floating-logo { width:56px; height:56px; bottom:18px; right:18px; }
+  .floating-logo::after { width:220%; height:220%; filter: blur(20px); }
+  .floating-logo::before { width:200%; height:200%; filter: blur(12px); }
+}
+
+
+/*untuk resep populer
+/* Gaya umum */
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+.card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+.card h3 {
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin: 0 10px 15px;
+  font-size: 0.95rem;
+}
+
+/* Responsif di mobile */
+@media (max-width: 500px) {
+  .card img {
+    height: 250px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+}
+
+a {
+  text-decoration: none; /* hilangkan garis bawah */
+  color: inherit; /* biar warnanya sama seperti teks normal */
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 99999;
+}
+
+@media (max-width: 780px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  header {
+    position: relative;
+  }
+
+  nav#nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #c0392b;
+    padding: 15px;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+  }
+
+  nav#nav-menu.show {
+    display: flex;
+  }
+}
+
+/*tambahan agar webnya bisa menyesuaikan ukuran layar hp
+/*responsif navbar
+

@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
+  <title>Cita Rasa - Khas Nusantara</title>
+  <link rel="icon" type="images/FullLogo" href="images/FullLogo.png">
+  <link rel="stylesheet" href="style.css">
+    <title>Kuliner Sumatra</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #fdf9f3;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      /* HEADER */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(
+          to right,
+          #fff4e6,
+          #e39c0b,
+          #c0392b,
+          #c0392b
+        );
+        padding: 10px 30px;
+        color: #c0392b;
+      }
+
+      header .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      header .logo img {
+        height: 50px;
+        width: auto;
+      }
+
+      header .logo h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      nav {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.2s;
+      }
+
+      nav a:hover {
+        color: #ffd700;
+      }
+      /* Dropdown nav khas nusantara */
+      nav {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      /* container dropdown */
+      .nav-item.dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* tombol pemicu - disesuaikan tampilan nav */
+      .dropdown-toggle {
+        background: transparent;
+        border: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 6px 8px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1rem;
+      }
+
+      /* hide default focus outline -> tambahkan custom focus */
+      .dropdown-toggle:focus {
+        outline: 3px solid rgba(255, 215, 0, 0.25);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
+
+      /* menu */
+      .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        min-width: 200px;
+        background: linear-gradient(180deg, #fffdf9 0%, #fff9e6 100%);
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        padding: 8px 6px;
+        list-style: none;
+        margin: 0;
+        display: none; /* default hidden */
+        z-index: 2000;
+        transform-origin: top;
+      }
+
+      /* show class untuk JS */
+      .dropdown-menu.show {
+        display: block;
+        animation: ddIn 0.18s ease;
+      }
+
+      /* item menu */
+      .dropdown-menu li {
+        margin: 6px 0;
+      }
+      .dropdown-menu li a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #c0392b;
+        font-weight: 600;
+        border-radius: 6px;
+      }
+      .dropdown-menu li a:hover,
+      .dropdown-menu li a:focus {
+        background: rgba(224, 142, 20, 0.08);
+        color: #e39c0b;
+        outline: none;
+      }
+
+      /* small-screen: menu full-width dropdown under nav */
+      @media (max-width: 780px) {
+        nav {
+          gap: 12px;
+        }
+        .dropdown-menu {
+          left: 0;
+          right: auto;
+          min-width: 180px;
+        }
+      }
+
+      /* simple enter animation */
+      @keyframes ddIn {
+        from {
+          opacity: 0;
+          transform: translateY(-6px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* Tombol Login */
+      .login-btn {
+        background-color: #ffd700;
+        color: #c0392b;
+        padding: 8px 16px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s, color 0.3s;
+      }
+
+      .login-btn:hover {
+        background-color: white;
+        color: #c0392b;
+      }
+
+      /* HERO */
+      .hero {
+        position: relative;
+        height: 100vh;
+        background: url("https://source.unsplash.com/1600x900/?sumatra-food")
+          center/cover fixed no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(#fffdf9, #e39c02, #c0392b);
+        color: #fff;
+        padding: 50px 20px 20px;
+        font-family: "Segoe UI", sans-serif;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        animation: fadeDown 1s ease forwards;
+      }
+      .hero h1 {
+        font-size: 3em;
+        margin-bottom: 15px;
+        letter-spacing: 2px;
+      }
+      .hero p {
+        font-size: 1.2em;
+      }
+
+      /* HIGHLIGHT */
+      .highlight {
+        background: #fff7e6;
+        padding: 70px 20px;
+        text-align: center;
+      }
+      .highlight h2 {
+        color: #ff6600;
+        font-size: 2.2em;
+        margin-bottom: 40px;
+      }
+      .flip-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .flip-card {
+        perspective: 1000px;
+      }
+      .flip-inner {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        transform-style: preserve-3d;
+        transition: transform 0.8s;
+        cursor: pointer;
+      }
+      .flip-card:hover .flip-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-front,
+      .flip-back {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      }
+      .flip-front img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .flip-back {
+        background: linear-gradient(to bottom right, #ff6600, #ffb366);
+        color: white;
+        transform: rotateY(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        font-size: 1.1em;
+      }
+
+      /* RESEP UNGGULAN SHOWCASE */
+      .recipes {
+        background: #fefaf5;
+        padding: 80px 20px;
+        text-align: center;
+        display: block;
+      }
+      .recipes h2 {
+        font-size: 2.4em;
+        color: #ff6600;
+        margin-bottom: 50px;
+      }
+      .showcase {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 30px;
+        justify-content: center;
+        max-width: 1100px;
+        margin: auto;
+      }
+      /* --- RESPONSIVE MODE --- */
+    @media (max-width: 1024px) {
+    .showcase {
+    flex-wrap: wrap;          /* kalau layar kecil, otomatis turun */
+    justify-content: center;
+    }
+    .card {
+    width: 280px;
+    }
+  }
+
+    @media (max-width: 768px) {
+    .card {
+    width: 100%;
+    max-width: 320px;
+    }
+  }
+      .card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        width: 300px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        transition: transform 0.4s, box-shadow 0.4s;
+        cursor: pointer;
+      }
+      .card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+      .card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+      .card:hover img {
+        transform: scale(1.05);
+      }
+      .card-content {
+        padding: 20px;
+      }
+      .card-content h3 {
+        color: #ff6600;
+        font-size: 1.4em;
+        margin-bottom: 15px;
+      }
+      .card-content button {
+        background: #ff6600;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .card-content button:hover {
+        background: #e05500;
+      }
+
+      /* MODAL POPUP */
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .modal-content {
+        background: white;
+        border-radius: 15px;
+        max-width: 600px;
+        width: 90%;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding: 25px;
+        position: relative;
+        animation: fadeUp 0.5s ease;
+      }
+      .modal-content h3 {
+        color: #ff6600;
+        margin-bottom: 10px;
+      }
+      .modal-content h4 {
+        color: #cc5500;
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+      .modal-content ul,
+      .modal-content ol {
+        margin-left: 20px;
+        margin-bottom: 10px;
+      }
+      .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 1.5em;
+        color: #ff6600;
+        cursor: pointer;
+      }
+
+      /* GALLERY PHOTO */
+      .gallery {
+        background: #fff7e6;
+        padding: 70px 20px;
+        text-align: center;
+      }
+      .gallery h2 {
+        font-size: 2.3em;
+        color: #ff6600;
+        margin-bottom: 50px;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .gallery-item {
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      }
+      .gallery-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      footer {
+        background: linear-gradient(#fffdf9, #e39c02, #c0392b);
+        color: #fff;
+        padding: 50px 20px 20px;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
+        gap: 30px;
+      }
+
+      .footer-logo img {
+        width: 100px;
+        margin-bottom: 15px;
+      }
+      .footer-logo h2 {
+        margin: 10px 0;
+        color: #c0392b; /* warna emas elegan */
+      }
+      .footer-logo p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #fff;
+        max-width: 250px;
+      }
+
+      .footer-links h3,
+      .footer-newsletter h3 {
+        margin-bottom: 15px;
+        color: #c0392b;
+        font-size: 18px;
+      }
+
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+      }
+      .footer-links ul li {
+        margin: 8px 0;
+      }
+      .footer-links ul li a {
+        text-decoration: none;
+        color: #fff;
+        transition: 0.3s;
+      }
+      .footer-links ul li a:hover {
+        color: #fff;
+      }
+
+      .footer-newsletter p {
+        font-size: 14px;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+
+      .footer-newsletter form {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+      }
+      .footer-newsletter input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+      }
+      .footer-newsletter button {
+        background: #ffd700;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .footer-newsletter button:hover {
+        background: #e2b930;
+      }
+
+      .footer-social a {
+        font-size: 20px;
+        margin-right: 12px;
+        color: #fff;
+        transition: 0.3s;
+      }
+      .footer-social a:hover {
+        color: #f4c542;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 25px;
+        border-top: 1px solid #444;
+        margin-top: 30px;
+        font-size: 14px;
+        color: #fff;
+      }
+
+      /* ANIMATION */
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.2em;
+        }
+      }
+
+      .hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 99999;
+}
+
+@media (max-width: 780px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  header {
+    position: relative;
+  }
+
+  nav#nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #c0392b;
+    padding: 15px;
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+  }
+
+  nav#nav-menu.show {
+    display: flex;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+    <div class="logo">
+      <img src="images/logonav.png" alt="Logo Cita Rasa" />
+    </div>
+    <!-- HAMBURGER BUTTON WAJIB -->
+    <button class="hamburger" id="hamburger-btn">☰</button>
+
+    <nav id="nav-menu">
+      <!-- Dropdown Khas Nusantara -->
+      <div class="nav-item dropdown">
+        <button
+          class="dropdown-toggle"
+          id="dd-khas"
+          aria-expanded="false"
+          aria-haspopup="true"
+          type="button"
+        >
+          Khas Nusantara <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+        </button>
+
+        <ul class="dropdown-menu" aria-labelledby="dd-khas">
+          <li><a href="sumatera-bila.html">Sumatera</a></li>
+          <li><a href="sumatera-kheyla.html">Aceh, Lampung &amp; Riau</a></li>
+          <li><a href="kodingan dua ana.html">Kalimantan</a></li>
+          <li><a href="resep karedok,kerak telor,rawon kehyla.html">Jawa</a></li>
+          <li><a href="resep sulawesi nayla.html">Sulawesi</a></li>
+          <li><a href="resep rawon dll kheyla.html">Bali &amp; Nusa Tenggara</a></li>
+          <li><a href="resep maluku papua nayla.html">Maluku &amp; Papua</a></li>
+        </ul>
+      </div>
+
+      <a href="#Resep-Populer">Resep Populer</a>
+      <a href="Tentangkami.html">Tentang Kami</a>
+      <a href="#Kontak">Kontak</a>
+      <a href="login.html" class="login-btn">
+        <i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Login
+      </a>
+    </nav>
+  </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>🍲 Kuliner Sulawesi</h1>
+        <p>
+          Jelajahi kelezatan dan keragaman kuliner Sulawesi yang kaya rasa dan
+          rempah
+        </p>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHT -->
+    <section class="highlight" id="highlight">
+      <h2>✨ Hidangan Ikonik ✨</h2>
+      <div class="flip-grid">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="images/sambal-raja-kutai-foto-resep-utama.jpg" alt="Sambal raja" />
+            </div>
+            <div class="flip-back">
+              <p>
+                Sambal raja khas Kalimantan Timur.
+                terdiri dari sambal pedas dengan terong dan bawang
+                 dulu disajikan untuk kalangan bangsawan.
+                
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="images/ikan parape.jpg" alt="Ikan Parape" />
+            </div>
+            <div class="flip-back">
+              <p>
+              Ikan Parape dari Sulawesi Tengah.
+              berupa ikan bakar dengan saus bawang, tomat, dan cabai yang gurih pedas.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="images/jepa.jpg" alt="Jepa" />
+            </div>
+            <div class="flip-back">
+              <p>
+               Jepa dari Sulawesi Barat.
+               dibuat dari singkong dan kelapa yang dipanggang, menjadi makanan pokok masyarakat mandar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEP UNGGULAN -->
+    <section class="recipes" id="recipes">
+      <h2>🥘 Resep 🥘</h2>
+
+      <div class="showcase">
+        <div class="card" data-modal="Sambal-Raja">
+          <div class="card-content">
+            <h3>Sambal Raja</h3>
+            <button>Lihat Resep</button>
+          </div>
+        </div>
+
+        <div class="card" data-modal="Ikan-Parape">
+          <div class="card-content">
+            <h3>Ikan Parape</h3>
+            <button>Lihat Resep</button>
+          </div>
+        </div>
+
+        <div class="card" data-modal="Jepa">
+          <div class="card-content">
+            <h3>Jepa</h3>
+            <button>Lihat Resep</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALS -->
+    <div class="modal" id="Sambal-Raja">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>Sambal Raja</h3>
+        <h4>Bahan:</h4>
+        <ul>
+          <li>5 buah cabai merah besar</li>
+          <li>10 cabai rawit</li>
+          <li>4 siung bawamng merah</li>
+          <li>2 siung bawang putih</li>
+          <li>2 sdm terasi bakar</li>
+          <li>1 sdm air jeruk nipis</li>
+          <li>garam gula secukupnya</li>
+          <li>2 sdm minyak goreng</li>
+        </ul>
+        <h4>Cara Membuat:</h4>
+        <ol>
+          <li>
+            Goreng cabai, bawang merah, dan bawang putih sebentar hingga layu.
+          </li>
+          <li>
+           haluskan bawang goreng bersama terasi, garam dan gula.
+          </li>
+          <li>
+           Tumis sambal hingga harum, beri perasan jeruk nipis.
+          </li>
+          <li>
+            Sajikan dengan pelengkap diatasnya.
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="Ikan-Parape">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>Ikan Parape</h3>
+        <h4>Bahan:</h4>
+        <ul>
+          <li>2 ekor ikan kakap</li>
+          <li>3 siung bawang putih</li>
+          <li>5 siung bawang merah</li>
+          <li>3 buah cabai merah</li>
+          <li>1 sdm kecap manis</li>
+          <li>1 sdm air asam jawa</li>
+          <li>garam gula, dan minyak goreng secukupnya</li>
+        </ul>
+        <h4>Cara Membuat:</h4>
+        <ul>
+          <li>Bersihkan ikan, lumuri garam, lalu bakar hingga matang</li>
+          <li>Haluskan bawang,cabai,garam, dan gula lalu tumis hingga harum</li>
+          <li>Tambahkan air asam dan kecap, aduk rata</li>
+          <li>Siramkan bumbu diaatas ikan bakar, sajikan hangat</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="modal" id="Jepa">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>Jepa</h3>
+        <h4>Bahan:</h4>
+        <ul>
+          <li>250 g singkong parut halus</li>
+          <li>100 gkelapa parut</li>
+          <li>garam secukupnya</li>
+        </ul>
+        <h4>Cara Membuat</h4>
+        <ol>
+          <li>
+            Campur singkong parut, kelapa, dan garam hingga rata.
+          </li>
+          <li>
+            Ambil sedikit adonan, pipihkan diatas cetakan datar(loyang).
+          </li>
+          <li>
+           Panggang diatas wajan datar(tanpa minyak) sampai kering dan agak renyah di kedua sisi.
+          </li>
+          <li>
+            Sajikan dengan lauk ikan bakar atau sambal tomat.
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- GALERI FOTO -->
+    <!-- SLIDER FOTO MULAI -->
+    <div
+      class="slider-container"
+      style="
+        position: relative;
+        max-width: 800px;
+        margin: 40px auto;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      "
+    >
+      <div
+        class="slider"
+        style="display: flex; transition: transform 0.5s ease-in-out"
+      >
+        <div class="slide" style="min-width: 100%; box-sizing: border-box">
+          <img
+            src="images/bila6.jpg"
+            alt="Foto 1"
+            style="width: 100%; height: 500px; display: block"
+          />
+        </div>
+        <div class="slide" style="min-width: 100%; box-sizing: border-box">
+          <img
+            src="images/bila5.jpg"
+            alt="Foto 2"
+            style="width: 100%; height: 500px; display: block"
+          />
+        </div>
+        <div class="slide" style="min-width: 100%; box-sizing: border-box">
+          <img
+            src="images/bila1.jpg"
+            alt="Foto 3"
+            style="width: 100%; height: 500px; display: block"
+          />
+        </div>
+        <div class="slide" style="min-width: 100%; box-sizing: border-box">
+          <img
+            src="images/bila7.jpg"
+            alt="Foto 4"
+            style="width: 100%; height: 500px; display: block"
+          />
+        </div>
+        <div class="slide" style="min-width: 100%; box-sizing: border-box">
+          <img
+            src="images/bila8.jpg"
+            alt="Foto 5"
+            style="width: 100%; height: 500px; display: block"
+          />
+        </div>
+        <div class="slide" style="min-width: 100%; box-sizing: border-box">
+          <img
+            src="images/bila1.jpg"
+            alt="Foto 6"
+            style="width: 100%; height: 500px; display: block"
+          />
+        </div>
+      </div>
+
+      <button
+        onclick="moveSlide(-1)"
+        style="
+          position: absolute;
+          top: 50%;
+          left: 10px;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          padding: 10px 15px;
+          font-size: 24px;
+          cursor: pointer;
+          z-index: 1;
+        "
+      >
+        &#10094;
+      </button>
+
+      <button
+        onclick="moveSlide(1)"
+        style="
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          padding: 10px 15px;
+          font-size: 24px;
+          cursor: pointer;
+          z-index: 1;
+        "
+      >
+        &#10095;
+      </button>
+    </div>
+    <!-- SLIDER FOTO SELESAI -->
+
+    
+    <footer>
+      <section id="Kontak"></section>
+      <div class="footer-container">
+        <!-- Kolom Logo & Deskripsi -->
+        <div class="footer-logo">
+          <img src="images/FullLogo.png" alt="Logo Cita Rasa" />
+          <p>
+            <b>Cita Rasa - Nusantara</b> Menghadirkan Rasa autentik Nusantara
+            dari Sabang sampai Merauke.
+          </p>
+        </div>
+
+        <!-- Kolom Navigasi -->
+        <div class="footer-links">
+          <h3>Navigasi</h3>
+          <ul>
+            <li><a href="#">Khas Nusantara</a></li>
+            <li><a href="#Resep-Populer">Resep Populer</a></li>
+            <li><a href="Tentangkami.html">Tentang Kami</a></li>
+            <li><a href="#">Kontak</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolom Newsletter -->
+        <div class="footer-newsletter">
+          <h3>Berlangganan</h3>
+          <p>
+            Dapatkan resep terbaru & artikel kuliner langsung ke email Anda.
+          </p>
+          <form>
+            <input type="email" placeholder="Masukkan email Anda" required />
+            <button type="submit">Kirim</button>
+          </form>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cita Rasa | Rasa Nusantara. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <script>
+      // Navbar scroll effect
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      // Modal functionality
+      const cards = document.querySelectorAll(".card");
+      const modals = document.querySelectorAll(".modal");
+      const closes = document.querySelectorAll(".close-btn");
+
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          const id = card.getAttribute("data-modal");
+          document.getElementById(id).style.display = "flex";
+        });
+      });
+
+      closes.forEach((close) => {
+        close.addEventListener("click", () => {
+          close.parentElement.parentElement.style.display = "none";
+        });
+      });
+
+      window.addEventListener("click", (e) => {
+        modals.forEach((m) => {
+          if (e.target === m) m.style.display = "none";
+        });
+      });
+    </script>
+    <script>
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        const slides = document.querySelectorAll(".slide");
+        const totalSlides = slides.length;
+
+        if (index >= totalSlides) currentSlide = 0;
+        else if (index < 0) currentSlide = totalSlides - 1;
+        else currentSlide = index;
+
+        const slider = document.querySelector(".slider");
+        slider.style.transform = `translateX(${-currentSlide * 100}%)`;
+      }
+
+      function moveSlide(step) {
+        showSlide(currentSlide + step);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        showSlide(currentSlide);
+      });
+      document.querySelector('.dropdown-toggle').addEventListener('click', function() {
+  document.querySelector('.dropdown-menu').classList.toggle('show');
+});
+
+const hamb = document.getElementById("hamburger-btn");
+const nav = document.getElementById("nav-menu");
+
+if (hamb && nav) {
+  hamb.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+}
+    </script>
+  </body>
+</html>
