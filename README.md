@@ -6,10 +6,11 @@
 
 ## Tampilan & Demo (Screenshots)
 
-| Beranda | Detail / Fitur Utama |
-| :---: | :---: |
-| ![Dashboard Showcase](images/dashboard.png) | ![Feature Showcase](images/fitur.png) |
-| *Tampilan Utama Dashboard* | *Tampilan Detail Fitur* |
+| Dashboard | <img src="images/dashboard.png" width="150" alt="Dashboard"> |
+|-----------|-------|
+| Fitur 1   | <img src="images/fitur.png" width="150" alt="Fitur 1">|
+| Fitur 2   | <img src="images/fitur1.png" width="150" alt="Fitur 2"> |
+| Fitur 3   | <img src="images/fitur2.png" width="150" alt="Fitur 3"> |
 
 ---
 
@@ -24,11 +25,11 @@
 
 ## Teknologi yang Digunakan
 
-![Tech Stack](https://lh5.googleusercontent.com/pTC9PHnxNneKvVoDHQr3lpx_6fmj12DMMHmJ4zu2O4H43Hux1eBOgCdQLCn97x2nk8yGKbI7X0vk6kvb3GQONYTT3q4_JDZpWup6QH8Pi6ZO1BvqBalIJ9fEcdiQBu1VCZVGnaeqz9jdJMaJ_cL5_FdTC67b6PFXgm-N72WRbGIYPvEFnfFZ6z1DAQ)
+<img src="https://lh5.googleusercontent.com/pTC9PHnxNneKvVoDHQr3lpx_6fmj12DMMHmJ4zu2O4H43Hux1eBOgCdQLCn97x2nk8yGKbI7X0vk6kvb3GQONYTT3q4_JDZpWup6QH8Pi6ZO1BvqBalIJ9fEcdiQBu1VCZVGnaeqz9jdJMaJ_cL5_FdTC67b6PFXgm-N72WRbGIYPvEFnfFZ6z1DAQ" width="250">
 
-![Tech Stack](https://miro.medium.com/1*zqtOKzf4nElBwpLTBzOVIQ.jpeg)
+<img src="https://miro.medium.com/1*zqtOKzf4nElBwpLTBzOVIQ.jpeg" width="250">
+<img src="https://cdn.prod.website-files.com/605c9e03d6553a5d82976ce2/6401d1f51c5489f398d43a09_Frame%2015.png" width="250">
 
-![Tech Stack](https://cdn.prod.website-files.com/605c9e03d6553a5d82976ce2/6401d1f51c5489f398d43a09_Frame%2015.png)
 
 - **Frontend:** React / HTML5 / CSS3 / Tailwind CSS
 - **Backend:** Node.js / Express
