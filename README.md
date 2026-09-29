@@ -8,7 +8,7 @@
 
 | Beranda | Detail / Fitur Utama |
 | :---: | :---: |
-| ![Dashboard Showcase](images\dashboard.png) | ![Feature Showcase](images\fitur.png) |
+| ![Dashboard Showcase](images/dashboard.png) | ![Feature Showcase](images/fitur.png) |
 | *Tampilan Utama Dashboard* | *Tampilan Detail Fitur* |
 
 ---
